@@ -27,9 +27,8 @@ public class VideoCallMeetingHuddle01 {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://beta.huddle01.com/");
 		driver.findElement(By.xpath("//img[@alt='start-meeting']")).click();
-//		WebElement name=driver.findElement(By.xpath("//input[@placeholder='Please Enter Your Name']"));
-//		name.clear();
-//		name.sendKeys("Guest1");
+
+		// Login as Guest 1
 		driver.findElement(By.xpath("//input[@placeholder='Please Enter Your E-mail']")).sendKeys("karishmaoberoi94@gmail.com");
 		WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, 20).ignoring(StaleElementReferenceException.class);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Enter Meeting']")));
